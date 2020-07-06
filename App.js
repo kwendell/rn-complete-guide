@@ -12,7 +12,7 @@ export default function App() {
   };
 
   const addGoalHandler = () => {
-    setCourseGoals([....courseGoals,enteredGoal]);
+    setCourseGoals(currentGoals => [...currentGoals,enteredGoal]);
   };
   return (
     <View style={styles.screen} >
@@ -24,6 +24,7 @@ export default function App() {
       />
       <Button title="Add" onPress={addGoalHandler}/>
     </View>
+    <View>{courseGoals.map((goal) => <Text key={goal}>{goal}</Text>)}</View>
     </View>
   );
 
