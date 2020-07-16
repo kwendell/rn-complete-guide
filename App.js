@@ -24,7 +24,9 @@ export default function App() {
       />
       <Button title="Add" onPress={addGoalHandler}/>
     </View>
-    <ScrollView>{courseGoals.map((goal) => <View key={goal} style={styles.listItem}><Text>{goal}</Text></View>)}</ScrollView>
+    <FlatList data={courseGoals} 
+               renderItem={ itemData => (<View  style={styles.listItem}><Text>{itemData.item}</Text></View>) }/>
+    
     </View>
   );
 
